@@ -9,6 +9,7 @@
 var BOTS = [
   'Twitterbot',
   'Google Keyword Suggestion',
+  'Google-Structured-Data-Testing-Tool',
   'AdsBot-Google',
   'Googlebot',
   'applebot',
