@@ -113,7 +113,11 @@ module.exports = function expressBot(options) {
   options.querystring.value = options.querystring.value || '1';
   options.querystring.locals = options.querystring.locals || ['querystring', options.querystring.key, options.querystring.value];
 
-  var BOT_REGEXP = new RegExp('^.*(' + BOTS.join('|') + ').*$', 'i');
+  var bots = BOTS.slice();
+  if (options.querystring.bots) {
+    bots = bots.concat(options.querystring.bots);
+  }
+  var BOT_REGEXP = new RegExp('^.*(' + bots.join('|') + ').*$', 'i');
 
   return function(req, res, next) {
 
